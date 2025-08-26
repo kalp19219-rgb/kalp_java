@@ -5,7 +5,7 @@ pipeline {
         choice(name: 'action', choices: ['create', 'delete'], description: 'Choose create/Destroy')
         string(name: 'ImageName', defaultValue: 'javapp', description: "name of the docker build")
         string(name: 'ImageTag', defaultValue: 'v1', description: "tag of the docker build")
-        string(name: 'DockerHubUser', defaultValue: 'vikashashoke', description: "DockerHub Username")
+        string(name: 'DockerHubUser', defaultValue: 'admin', description: "DockerHub Username")
     }
 
     environment {
@@ -17,7 +17,7 @@ pipeline {
         stage('Git Checkout') {
             when { expression { params.action == 'create' } }
             steps {
-                git branch: 'main', url: 'https://github.com/vikash-kumar01/mrdevops_java_app.git'
+                git branch: 'main', url: 'https://github.com/kalp19219-rgb/kalp_java.git'
             }
         }
 
