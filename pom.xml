@@ -71,15 +71,16 @@
             </plugin>
 
             <!-- Maven Compiler Plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version> <!-- ✅ Supports JDK 17 -->
-                <configuration>
-                    <release>17</release> <!-- ✅ Compile with Java 17 -->
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+<build>
+  <pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+      </plugin>
+    </plugins>
+  </pluginManagement>
+</build>
 
 </project>
