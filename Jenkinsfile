@@ -2,21 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Git Checkout') {
             steps {
-                echo "Building the project..."
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo "Running tests..."
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo "Deploying application..."
+                script {
+                    git branch: 'main', url: 'https://github.com/kalp19219-rgb/kalp_java.git'
+                }
             }
         }
     }
