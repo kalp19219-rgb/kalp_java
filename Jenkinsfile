@@ -3,10 +3,10 @@
 pipeline {
     agent any
 
-    stages{
+    stages {
 
-        stage('Git Checkout'){
-            steps{
+        stage('Git Checkout') {
+            steps {
                 gitCheckout(
                     branch: "main",
                     url: "https://github.com/kalp19219-rgb/kalp_java.git"
@@ -15,9 +15,17 @@ pipeline {
         }
 
         stage('Unit Test Maven') {
-            steps{
-                script{
+            steps {
+                script {
                     mvnTest()
+                }
+            }
+        }
+
+        stage('Integration Unit Test Maven') {
+            steps {
+                script {
+                    mvnIntegrationTest()
                 }
             }
         }
