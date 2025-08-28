@@ -1,25 +1,17 @@
-@Library('my-shared-library') _
-
 pipeline {
     agent any
 
     stages {
-        stage('Git Checkout') {
+        stage('Checkout') {
             steps {
-                script {
-                    gitCheckout(
-                        branch: "main",
-                        url: "https://github.com/kalp19219-rgb/jenkins_shared_lib.git"
-                    )
-                }
+                git branch: 'main',
+                    url: 'https://github.com/kalp19219-rgb/kalp_java.git'
             }
         }
 
-        stage('Unit Test Maven') {
+        stage('Build & Test') {
             steps {
-                script {
-                    mvnTest()
-                }
+                sh 'mvn clean test'
             }
         }
     }
