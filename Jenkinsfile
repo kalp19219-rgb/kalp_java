@@ -1,3 +1,5 @@
+@Library('my-shared-library') _
+
 pipeline {
     agent any
 
@@ -5,7 +7,10 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 script {
-                    git branch: 'main', url: 'https://github.com/kalp19219-rgb/kalp_java.git'
+                    gitCheckout(
+                        branch: "main",
+                        url: "https://github.com/kalp19219-rgb/jenkins_shared_lib.git"
+                    )
                 }
             }
         }
