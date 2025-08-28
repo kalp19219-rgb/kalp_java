@@ -6,12 +6,10 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                script {
                     gitCheckout(
                         branch: "main",
                         url: "https://github.com/kalp19219-rgb/kalp_java.git"
-                    )
-                }
+            )
             }
         }
 
