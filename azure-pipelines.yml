@@ -1,6 +1,5 @@
-
 pool:
-  name: Kalppool   # tamaro self-hosted agent pool
+  vmImage: Kalppool
 
 stages:
 - stage: stageA
@@ -22,4 +21,3 @@ stages:
   displayName: "this is stage D"
   jobs:
   - job: jobD
-
