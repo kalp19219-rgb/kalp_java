@@ -1,22 +1,31 @@
 pool:
-  vmImage: Kalppool
+  name: Kalppool   # self-hosted pool no naam
+
 stages:
 - stage: stageA
   displayName: "this is stage A"
   jobs:
   - job: jobA
+    steps:
+    - script: echo "Running Job A"
 
 - stage: stageB
   displayName: "this is stage B"
   jobs:
   - job: jobB
+    steps:
+    - script: echo "Running Job B"
 
 - stage: stageC
   displayName: "this is stage C"
   jobs:
   - job: jobC
+    steps:
+    - script: echo "Running Job C"
 
 - stage: stageD
   displayName: "this is stage D"
   jobs:
   - job: jobD
+    steps:
+    - script: echo "Running Job D"
