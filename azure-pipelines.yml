@@ -2,8 +2,14 @@
 pool:
   name: Kalppool   # tamaro self-hosted agent pool
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a script without stage explicitly defined'
+stages:
+- stage: stageA
+  displayName: "this is stage A"
+  jobs:
+  - job: jobA
 
-- bash: echo "This is bash step"
+- stage: stageB
+  displayName: "this is stage B"
+  jobs:
+  - job: jobB
+
