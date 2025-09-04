@@ -1,5 +1,5 @@
 pool:
-  -name: ubuntu-latest
+  -vmImage: 'ubuntu-latest'
 
 stages:
 - stage: stageA
