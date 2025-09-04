@@ -1,5 +1,5 @@
 pool:
-  name: Kalppool   # self-hosted pool no naam
+  -vmImage: ubuntu-latest
 
 stages:
 - stage: stageA
