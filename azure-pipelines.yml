@@ -1,5 +1,5 @@
 pool:
-  vmImage: Kalppool
+  name: Kalppool
 
 stages:
 - stage: stageA
