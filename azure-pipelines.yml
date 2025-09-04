@@ -1,7 +1,7 @@
 stages:
 - stage: stageA
   pool:
-    name: Kalppool
+    vmImage: ubuntu-latest
   displayName: "this is stage A"
   jobs:
   - job: jobA
