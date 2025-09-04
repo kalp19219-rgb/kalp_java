@@ -16,10 +16,10 @@ stages:
 - stage: stageC
   displayName: "this is stage C"
   jobs:
-  - job: jobA
+  - job: jobC
 
 - stage: stageD
   displayName: "this is stage D"
   jobs:
-  - job: jobB
+  - job: jobD
 
