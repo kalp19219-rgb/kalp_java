@@ -1,20 +1,6 @@
-trigger:
-- main
 
 pool:
   name: Kalppool   # tamaro self-hosted agent pool
 
-resources:
-  repositories:
-    - repository: self
-      type: github
-      name: kalp19219-rgb/kalp_java
-      endpoint: GitHubConnection  # Azure DevOps ma GitHub service connection no name
-
-stages:
-- stage: Build
-  jobs:
-  - job: BuildJob
-    steps:
-    - checkout: self
-    - script: echo "Code checkout from GitHub success!"
+steps:
+  - bash: echo"Hello"
