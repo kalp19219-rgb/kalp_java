@@ -1,3 +1,4 @@
+
 pool:
   name: Kalppool
 stages:
@@ -7,8 +8,9 @@ stages:
 
 - stage: Prod
   jobs:
-  - job: ProdJob
+  - job: Prodjob
 
 - stage: Test
+  dependsOn: QA
   jobs:
   - job: TestJob
