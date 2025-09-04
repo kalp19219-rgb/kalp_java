@@ -3,4 +3,7 @@ pool:
   name: Kalppool   # tamaro self-hosted agent pool
 
 steps:
-  - bash: echo"Hello"
+- script: echo Hello, world!
+  displayName: 'Run a script without stage explicitly defined'
+
+- bash: echo "This is bash step"
