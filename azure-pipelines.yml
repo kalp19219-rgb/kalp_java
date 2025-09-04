@@ -13,3 +13,13 @@ stages:
   jobs:
   - job: jobB
 
+- stage: stageC
+  displayName: "this is stage C"
+  jobs:
+  - job: jobA
+
+- stage: stageD
+  displayName: "this is stage D"
+  jobs:
+  - job: jobB
+
