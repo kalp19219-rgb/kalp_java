@@ -3,5 +3,4 @@ pool:
 
 steps:
   - script: "Hello"
-    displayName: 'Run a one line script'
-    
+    displayName: 'Run a one-line script'
