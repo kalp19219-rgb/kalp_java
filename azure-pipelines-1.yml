@@ -1,15 +1,15 @@
 trigger: none
 
 parameters:
-  - name: Images
-    displayName: PoolImage
+  - name: PoolName
+    displayName: "Choose Pool"
     default: Kalppool
     type: string
     values:
-      - Kalppool
-      - windows-latest
-
+      - Kalppool       # tamaru self-hosted pool
+      - macOS-latest   # hosted agent
+      - windows-latest # hosted agent
 
 steps:
-  - script: echo Hello Kalp
-    displayName: 'parameter are defined for pool'
+  - script: echo "Hello, running on ${{ parameters.PoolName }}"
+    displayName: "Run on selected pool"
