@@ -1,20 +1,15 @@
-trigger:
-- main
+trigger: none
 
-pool:
-  vmImage: 'windows-latest'
+parameters:
+  - name: Images
+    displayName: PoolImage
+    default: Kalppool
+    type: string
+    values:
+      - Kalppool
+      - windows-latest
 
-stages:
-- stage: A
-  jobs:
-  - job: JobA
-    steps:
-    - task: PowerShell@1
-      inputs:
-        scriptType: 'inlineScript'
-        inlineScript: |
-          # You can write your powershell scripts inline here.
-          # You can also pass predefined and custom variables to this scripts using arguments
 
-          Write-Host "Hello World"
-      
+steps:
+  - script: echo Hello Kalp
+    displayName: 'parameter are defined for pool'
