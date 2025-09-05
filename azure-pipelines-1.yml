@@ -1,15 +1,11 @@
 trigger: none
 
-parameters:
-  - name: PoolName
-    displayName: "Choose Pool"
-    default: Kalppool
-    type: string
-    values:
-      - Kalppool       # tamaru self-hosted pool
-      - macOS-latest   # hosted agent
-      - windows-latest # hosted agent
+pool:
+ name: Kalppool
 
-steps:
-  - script: echo "Hello, running on ${{ parameters.PoolName }}"
-    displayName: "Run on selected pool"
+stages:
+  - stage: CheckoutCode
+    jobs:
+      - job: 'Checkoutgitcode'
+        steps:
+          - checkout: self
