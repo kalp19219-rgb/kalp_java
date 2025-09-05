@@ -7,7 +7,7 @@ stages:
   jobs:
   - job: JobA
     steps:
-    - script: echo "Maven@4"
+    - task: Maven@4
     
 
 - stage: Stage2
