@@ -5,11 +5,7 @@ stages:
 - stage: Stage1
   jobs:
   - job: JobA
-    steps:
-    - script: |
-        echo "Running JobA - This will FAIL"
-        exit 1   # deliberately failing the job
-
+    
 - stage: Stage2
   condition: succeeded('A')
   jobs:
