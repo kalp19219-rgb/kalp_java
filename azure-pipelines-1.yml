@@ -1,14 +1,24 @@
-
 pool:
   name: Kalppool
+
 stages:
 - stage: Stage1
   jobs:
   - job: Job1
 
 - stage: Stage2
-  dependsOn: []
+  dependsOn: Stage1
   jobs:
   - job: Job2
 
+- stage: Stage3
+  dependsOn: Stage1
+  jobs:
+  - job: Job3
 
+- stage: Stage4
+  dependsOn:
+  - Stage2
+  - Stage3
+  jobs:
+  - job: Job4
