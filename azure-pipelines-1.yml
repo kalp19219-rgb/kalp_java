@@ -1,16 +1,20 @@
-trigger: none
+trigger:
+- main
 
 pool:
   name: Kalppool
 
 stages:
-- stage: Deploy
+- stage: A
   jobs:
-  - deployment: Test
-    environment: Test
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - checkout: self
-          - script: echo "This is my first deployment job demo"
+  - job: JobA
+    steps:
+    - task: PowerShell@1
+      inputs:
+        scriptType: 'inlineScript'
+        inlineScript: |
+          # You can write your powershell scripts inline here.
+          # You can also pass predefined and custom variables to this scripts using arguments
+
+          Write-Host "Hello World"
+      
