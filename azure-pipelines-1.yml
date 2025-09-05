@@ -13,3 +13,13 @@ stages:
     - script: |
         echo "Hello from Job A"
         exit 1   # deliberately failing, but pipeline will continue due to continueOnError: true
+
+  - job: jobnameB
+    timeoutInMinutes: 5
+    continueOnError: true
+    displayName: "this is B single job demo"
+    cancelTimeoutInMinutes: 2
+    steps:
+    - script: |
+        echo "Hello from Job B"
+        exit 1   # deliberately failing, but pipeline will continue due to continueOnError: true
