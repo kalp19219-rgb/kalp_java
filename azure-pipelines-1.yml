@@ -1,6 +1,12 @@
 pool:
   name: Kalppool
 
-steps:
-  - script: echo Hello
-    displayName: 'Run a one-line script'
+stages:
+- stage: A
+  jobs:
+  - job: jobnameA
+    timeoutInMinutes: 5
+    continueOnError: true
+    displayName: "this is single job demo"
+    cancelTimeoutInMinutes: 2
+
