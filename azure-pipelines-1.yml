@@ -5,13 +5,16 @@ pool:
   name: Kalppool
 
 stages:
-- stage: Build
-  displayName: "Build Stage"
+- stage: CheckoutCode
   jobs:
-  - job: MavenBuild
-    displayName: "Maven Build Job"
+  - job: Checkoutgitcode
     steps:
     - checkout: self
+
+- stage: Build
+  jobs:
+  - job:
+    steps:
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
