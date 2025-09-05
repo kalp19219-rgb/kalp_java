@@ -2,15 +2,13 @@
 pool:
   name: Kalppool
 stages:
-- stage: QA
+- stage: Stage1
   jobs:
-  - job: QAJob
+  - job: Job1
 
-- stage: Prod
+- stage: Stage2
+  dependsOn: []
   jobs:
-  - job: Prodjob
+  - job: Job2
 
-- stage: Test
-  dependsOn: QA
-  jobs:
-  - job: TestJob
+
