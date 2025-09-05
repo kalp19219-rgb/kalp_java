@@ -1,16 +1,15 @@
 
+pool:
+  name: Kalppool
+
 stages:
 - stage: Stage1
-  pool:
-   name: Kalppool
   jobs:
-  - job: Job1
+  - job: JobA
+    
 
 - stage: Stage2
-  dependsOn: []
-  pool:
-   name: Kalppool
+  condition: failed()
   jobs:
-  - job: Job2
-
-
+  - job: JobB
+    
