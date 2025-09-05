@@ -2,11 +2,11 @@ pool:
   name: Kalppool
 
 stages:
-- stage: Stage1
+- stage: StageA
   jobs:
   - job: JobA
     
-- stage: Stage2
+- stage: StageB
   condition: succeeded('A')
   jobs:
   - job: JobB
