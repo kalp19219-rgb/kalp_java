@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  name: Kalppool
+  vmImage: 'windows-latest'
 
 stages:
 - stage: A
