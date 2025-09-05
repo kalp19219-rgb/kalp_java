@@ -1,13 +1,7 @@
 pool:
   name: Kalppool
 
-stages:
-- stage: StageA
-  jobs:
-  - job: JobA
-    
-- stage: StageB
-  condition: succeeded('A')
-  jobs:
-  - job: JobB
+steps:
+  - script: "Hello"
+    displayName: 'Run a one line script'
     
