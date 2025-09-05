@@ -1,11 +1,24 @@
+
 trigger: none
 
 pool:
- name: Kalppool
+  name: Kalppool
 
 stages:
-  - stage: CheckoutCode
-    jobs:
-      - job: 'Checkoutgitcode'
-        steps:
-          - checkout: self
+- stage: Build
+  displayName: "Build Stage"
+  jobs:
+  - job: MavenBuild
+    displayName: "Maven Build Job"
+    steps:
+    - checkout: self
+    - task: Maven@4
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'install'
+        publishJUnitResults: false
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: false
