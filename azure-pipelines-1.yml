@@ -10,5 +10,4 @@ stages:
   condition: succeeded('A')
   jobs:
   - job: JobB
-    steps:
-    - script: echo "Running JobB because JobA failed"
+    
