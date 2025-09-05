@@ -2,5 +2,5 @@ pool:
   name: Kalppool
 
 steps:
-  - script: "Hello"
+  - script: echo Hello
     displayName: 'Run a one-line script'
